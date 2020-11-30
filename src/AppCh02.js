@@ -1,6 +1,6 @@
 import "./App.css";
 
-function App() {
+function AppCh02() {
   const name = "리액트";
   const style = {
     backgroundColor: "black", // background-color
@@ -69,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppCh02;
