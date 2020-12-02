@@ -13,14 +13,22 @@ class AppCh030401stateInClass extends Component {
     super(props);
     // state의 초깃값 설정하기
     this.state = {
-      number: 0
+      number: 0,
+      fixedNumber: 0
     };
   }
+
+  /**
+   * constructor를 사용하지 않고 클래스 멤버 변수로 state = {...}; 
+   * 형식으로 number, fixedNumber의 초깃값을 설정할 수 있다.
+   */
+
   render() {
-    const {number} = this.state; // state를 조회할 때는 this.state로 조회합니다.
+    const {number, fixedNumber} = this.state; // state를 조회할 때는 this.state로 조회합니다.
     return (
       <div>
         <h1>{number}</h1>
+        <h2>바뀌지 않는 값: {fixedNumber}</h2>
         <button
           // onClick을 통해 버튼이 클릭되었을 때 호출할 함수를 지정합니다.
           onClick={() => {
