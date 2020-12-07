@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import AppCh03 from "./AppCh03";
+import AppCh04 from "./ch04/AppCh04";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 // import App from "./App.js";
@@ -12,6 +13,7 @@ ReactDOM.render(
     {/* <App /> */}
     {/* <ParentComponent/> */}
     <AppCh03/>
+    <AppCh04/>
   </React.StrictMode>,
   document.getElementById("root")
 );
