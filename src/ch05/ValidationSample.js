@@ -9,7 +9,7 @@ class ValidationSample extends Component {
     validated: false
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     this.setState({
       password: e.target.value,
     });
@@ -22,6 +22,13 @@ class ValidationSample extends Component {
     });
   };
 
+  handleEnterKey = e => {
+    if(e.key === 'Enter') {
+      this.handleChange(e);
+      this.handleButtonClick();
+    }
+  };
+
   render() {
     return (
       <div>
@@ -30,6 +37,7 @@ class ValidationSample extends Component {
           value={this.state.password}
           onChange={this.handleChange}
           className={this.state.clicked ? (this.state.validated ? 'success' : 'failure') : ''}
+          onKeyPress={this.handleEnterKey}
         />
         <button onClick={this.handleButtonClick}>검증하기</button>
       </div>
