@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import AppCh03 from "./AppCh03";
 import AppCh04 from "./ch04/AppCh04";
 import AppCh05 from "./ch05/AppCh05";
+import AppCh06 from "./ch06/AppCh06";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 // import App from "./App.js";
@@ -18,6 +19,8 @@ ReactDOM.render(
     <AppCh04/>
     <hr size="5"/>
     <AppCh05/>
+    <hr size="5"/>
+    <AppCh06/>
   </React.StrictMode>,
   document.getElementById("root")
 );
