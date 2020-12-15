@@ -13,6 +13,7 @@ const IterationSample = () => {
   const [nextId, setNextId] = useState(5);
 
   const onChange = e => setInputText(e.target.value);
+
   const onClick = e => {
     const nextNames = names.concat({
       id: nextId,
@@ -22,13 +23,24 @@ const IterationSample = () => {
     setNames(nextNames);
     setInputText('');
   };
+
   const onPressEnter = e => {
     if(e.key === 'Enter') {
       onClick(e);
     }
   };
 
-  const nameList = names.map(name => <li key={name.id}>{name.text}</li>);
+  const onRemove = id => {
+    const nextNames = names.filter(name => name.id !== id);
+    setNames(nextNames);
+  };
+
+  const nameList = names.map(name => (
+    // event (e) 객체가 아닌 파라미터를 받을 땐 이렇게 호출하는 함수를 적어야 하는 것 같다.
+    <li key={name.id} onDoubleClick={() => onRemove(name.id)}> 
+      {name.text}
+    </li>
+  ));
 
   return (
     <>
